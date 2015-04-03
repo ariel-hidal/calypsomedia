@@ -1,0 +1,104 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  background-color: #DADADA
+
+}
+
+h1 {
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 0.4em;
+  margin-top: 1.3em;
+  margin-left: 1em;
+  position: fixed;
+}
+
+h1:hover {
+  color: #ff7373;
+}
+
+h3 {
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: fixed;
+}
+
+h3:hover {
+  color: #ff7373;
+}
+
+#contact {
+  margin-top: 58em;
+  margin-left: 3em;
+  font-size: 0.7em;
+}
+
+#work {
+  margin-top: 10.5em;
+  margin-left: 2.1em;
+  font-size: 1em;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+#pages {
+  margin-top: 16em;
+  margin-left: -0.45em;
+  margin-bottom: 100em;
+  position: fixed;
+  color: #242424;
+  font-family: 'lato', sans-serif;
+  font-weight: 400;
+  font-size: 0.75em;
+}
+
+#links {
+  color: #929292;
+  font-family: 'lato', sans-serif;
+  font-weight: 300;
+  font-size: 0.7em;
+  margin-top: 59.5em;
+  margin-left: -0.45em;
+  position: fixed;
+  }
+
+#images {
+  width: 55em;
+  margin-left: 20em;
+  margin-top: 3em;
+  position: absolute;
+}
+
+img {
+  margin-right: 30em;
+  margin-bottom: 2em;
+  width: 50em
+}
+
+.clear {
+  clear: both;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #242424;
+}
+
+a:hover {
+  color: #ff7373;
+}
+
+#active {
+  color: #ff7373;
+}
