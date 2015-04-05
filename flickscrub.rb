@@ -82,77 +82,16 @@ while i < set_titles.length
   i+=1
 end
 
-puts "links generated. Generating front page images"
 
-
-#generate formatted img links for every album
-front_page_images = ""
-i = 0
-while i < photo.length
-  if photo[i][0] == "Work"
-    if front_page_images == ""
-      front_page_images = front_page_images + "<img src=\"#{photo[i][1]}\" />" + "\n"
-    else
-      front_page_images = front_page_images + "<img class=\"clear\" src=\"#{photo[i][1]}\" />" + "\n"
-    end
-  else
-    front_page_images = front_page_images
-  end
-  i+=1
-end
-
-puts "images generated. Writing links to frontpage"
+puts "Links generated. Writing links to frontpage"
 
 # This is prewritten html template for all pages.
 # The generated album titles are concatenated as
 # links.
+raw_template = IO.read('html_template.html')
+template = raw_template.gsub "ADD_LINKS_HERE_PLEASE", front_page_links
 
-html_template =
-
-"
-<!DOCTYPE html>
-<html>
-<head>
-  <LINK href=\"stylesheet.css\" rel=\"stylesheet\" type=\"text/css\"/>
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Francois+One|Roboto+Condensed'
-  rel='stylesheet' type='text/css'>
-  <title>Calypso Media Landing page: Ariel Hidal's Portfolio</title>
-</head>
-<body>
-  <h1>CALYPSO<br>MEDiA</h1>
-  <div>
-    <h3 id=\"work\"><a href=\"index.html\">Work</a></li></h3>
-    <ul id=\"pages\">
-      #{front_page_links}
-    </ul>
-    <h3 id=\"contact\">Contact Information</h3>
-    <ul id=\"links\">
-      <li><a href=\"about.html\">About</a></li>
-      <li><a href=\"https://www.flickr.com/photos/arielthidal/\">Flickr</a></li>
-      <li><a href=\"https://www.facebook.com/ArielHidal\">Facebook</a></li>
-      <li><a href=\"https://www.youtube.com/watch?v=uPIIeVH6joA\">Complaints</a></li>
-    </ul>
-  </div>
-  <div id=\"images\">
-  ADD_IMGS_HERE_PLEASE
-  </div>
-</body>
-</html>
-"
-
-puts "Links written. Now writing image links to front page."
-
-#concatenates relevant set of links to template
-html_index = html_template.gsub "ADD_IMGS_HERE_PLEASE", front_page_images
-
-puts "Images written. Now generating file \"index.html\""
-
-#output front page
-html_name = "index.html"
-html_file = File.open(html_name, "w")
-html_file.puts(html_index)
-
-puts "\"index.html\" generated. Moving on to photoset pages."
+puts "Links written. Now Generating photoset images."
 
 #loop output for every album
 i1 = 0
@@ -160,7 +99,7 @@ while i1 < set_titles.length
   album_images = ""
   i2 = 0
   while i2 < photo.length
-    if (photo[i2][0] == set_titles[i1]) && (photo[i2][0] != "Work")
+    if (photo[i2][0] == set_titles[i1])
       if album_images == ""
         album_images = "<img src=\"#{photo[i2][1]}\" />" + "\n"
       else
@@ -171,12 +110,16 @@ while i1 < set_titles.length
     end
     i2+=1
   end
-  html_album = html_template.gsub "ADD_IMGS_HERE_PLEASE", album_images
-  html_name = "#{set_titles[i1]}.html"
+  html_album = template.gsub "ADD_IMGS_HERE_PLEASE", album_images
+  if set_titles[i1] == "Work"
+    html_name = "Index.html"
+  else
+    html_name = "#{set_titles[i1]}.html"
+  end
   html_file = File.open(html_name, "w")
   html_file.puts(html_album)
-  puts "Generated #{set_titles[i1]}"
+  puts "#{html_name} generated and written!"
   i1+=1
 end
 
-#That's all folks!
+puts "All Done!"
