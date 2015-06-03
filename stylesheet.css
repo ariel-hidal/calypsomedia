@@ -8,6 +8,10 @@ body {
 
 }
 
+img { 
+	width: 50em;
+}
+
 h1 {
   color: black;
   font-family: 'Roboto Condensed', sans-serif;
@@ -25,27 +29,36 @@ h3 {
   color: black;
   font-family: 'Roboto Condensed', sans-serif;
   position: fixed;
+  margin-top: 10.5em;
+  margin-left: 2.1em;
+  font-size: 1em;
 }
 
 h3:hover {
   color: #ff7373;
 }
 
-#contact {
-  margin-top: 58em;
-  margin-left: 3em;
-  font-size: 0.7em;
+ul {
+  list-style-type: none;
+}
+
+body > ul > li {
+  margin-bottom: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #242424;
+}
+
+a:hover {
+  color: #ff7373;
 }
 
 #work {
   margin-top: 10.5em;
   margin-left: 2.1em;
   font-size: 1em;
-}
-
-
-ul {
-  list-style-type: none;
 }
 
 #pages {
@@ -59,6 +72,12 @@ ul {
   font-size: 0.75em;
 }
 
+#contact {
+  margin-top: 58em;
+  margin-left: 3em;
+  font-size: 0.7em;
+}
+
 #links {
   color: #929292;
   font-family: 'lato', sans-serif;
@@ -68,37 +87,78 @@ ul {
   margin-left: -0.45em;
   position: fixed;
   }
-
-#images {
-  width: 55em;
-  margin-left: 20em;
-  margin-top: 3em;
-  position: absolute;
-}
-
-img {
-  margin-right: 30em;
-  margin-bottom: 2em;
-  width: 50em
-}
-
-.clear {
-  clear: both;
-}
-
-li {
-  margin-bottom: 0.3em;
-}
-
-a {
-  text-decoration: none;
-  color: #242424;
-}
-
-a:hover {
-  color: #ff7373;
-}
-
+  
 #active {
   color: #ff7373;
+}
+
+.images{
+  position: absolute;
+  float: right;
+  clear: both;
+  width: 50em;
+  margin-top: 3.2em;
+  margin-left: 20em;
+}
+
+.photo{
+	float: left;
+	margin-bottom: 3em;
+}
+
+
+.imgbox {
+	height: 100%;
+	width: 70em;
+}
+
+.meta { 
+	width: 1.5em;
+	position: relative;
+	float: right;
+	margin-right: 18em;
+	
+}
+
+div > ul > li {
+	margin-bottom: 1.4em;
+}
+
+.info {
+	font-family: 'lato', sans-serif;
+ 	font-weight: 400;
+  	font-size: 0.75em;
+	float: right;
+	margin-top: -9.8em;
+	margin-right: 19.5em;
+	
+}
+
+#aperture {
+	width: 1.5em;
+	float: right;
+	clear: both;
+	margin-bottom: 0.5em;
+}
+
+#focal {
+	width: 1.5em;
+	float: right;
+	clear: both;
+	margin-bottom: 0.5em;
+}
+
+
+#exposure {
+	width: 1.5em;
+	float: right;
+	clear: both;
+	margin-bottom: 0.5em;
+}
+
+#iso {
+	width: 1.5em;
+	float: right;
+	clear: both;
+	margin-bottom: 0.5em;
 }
